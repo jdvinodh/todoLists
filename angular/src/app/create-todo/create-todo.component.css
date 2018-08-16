@@ -1,0 +1,70 @@
+  .logoContainer{
+  
+   background-image: url('../../images/test.jpg');
+   background-position: 100% 20%;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    width:60%;
+    
+  }
+  .formContainer .alert{ /*  11/05/2018 */
+    padding: 5px 10px;
+    margin-bottom: 0;  
+    font-size: 12px;
+  }
+  .formContainer .form-horizontal .control-label{ /*  11/05/2018 */
+    padding-top: 0;
+    margin-bottom: 3px;
+  }
+  .flexContainer{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+  
+  }
+  
+  .logo-text {
+    padding: 0 0 0 20px;
+    font-weight: bold;
+    letter-spacing: 0;
+    color: #ff9900;
+  }
+  
+  
+  hr{
+   width: 10%;
+   color: #fff;
+  }
+  .form-group{
+  margin-bottom: 15px;
+  }
+  
+  label{
+  margin-bottom: 15px;
+  }
+  
+  input,
+  input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+  }
+  
+  
+  .main-center{ 
+   margin-top: 0px;
+   margin: 0 auto; 
+   padding: 25px 40px;
+  }
+  
+  .login-button{
+  margin-top: 5px;
+  }
+  
+  .login-register{
+  font-size: 11px;
+  text-align: center;
+  }
+
+  .active span {
+    width: 100%;
+  }
+

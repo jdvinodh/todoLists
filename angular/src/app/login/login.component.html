@@ -1,0 +1,16 @@
+
+<div class="loading" *ngIf="loading"></div>
+<div id="login">
+  <form name='form-login'>
+      <h2 class="form-signin-heading">Please login</h2>
+      <div class="danger">
+        {{loginStatus?.msg}}
+         </div> <br/>
+         
+    <input type="text" id="user" placeholder="Username" [(ngModel)]="model.username" name="username">
+    <input type="password" id="pass" placeholder="Password" [(ngModel)]="model.password" name="password">
+
+    <input type="submit" value="Login" (click)="postLogin(model)">
+
+  </form>
+</div>

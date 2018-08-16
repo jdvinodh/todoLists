@@ -1,0 +1,94 @@
+<div class="loading" *ngIf="loading"></div>
+<div class="flexContainer">
+  <div class="nopadding hidden-xs logoContainer flexCol" [ngStyle]="{'height':docHeight+'px'}">
+  </div>
+  <div class="flexCol formContainer col-xs-12 col-md-6">
+    <h1 class="logo-text">Create Todo Lists</h1>
+    <div class="main-login main-center">
+
+      <form class="form-horizontal" method="post" action="#" #todoRegForm="ngForm">
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label">Title</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" name="title" id="title" required #title="ngModel" [(ngModel)]="todoTitle" />
+            </div>
+            <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+              <div *ngIf="title.errors.required">
+                Title is required.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label">Details</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" name="details" id="details" required #details="ngModel" [(ngModel)]="todoDetails"
+              />
+            </div>
+            <div *ngIf="details.invalid && (details.dirty || details.touched)" class="alert alert-danger">
+              <div *ngIf="details.errors.required">
+                Details is required.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label">Assign To</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" name="assignTo" id="assignTo" required #assignTo="ngModel" [(ngModel)]="todoAssignTo"
+              />
+            </div>
+            <div *ngIf="assignTo.invalid && (assignTo.dirty || assignTo.touched)" class="alert alert-danger">
+              <div *ngIf="assignTo.errors.required">
+                Assign To is required.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label">Assigned By</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-user" aria-hidden="true"></i>
+              </span>
+              <input type="text" class="form-control" name="assignBy" id="assignBy" required #assignBy="ngModel" [(ngModel)]="todoAssignBy"
+              />
+            </div>
+            <div *ngIf="assignBy.invalid && (assignBy.dirty || assignBy.touched)" class="alert alert-danger">
+              <div *ngIf="assignBy.errors.required">
+                Assigned By is required.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <button type="button" [disabled]="todoRegForm.invalid" class="btn btn-primary btn-lg btn-block login-button" (click)="createTodo(todoTitle, todoDetails, todoAssignTo, todoAssignBy)">Create Todo</button>
+        </div>
+
+        <p class="text-center">
+          <strong>
+            <a routerLink="/todoLists" role="button">View Todo Lists</a>
+          </strong>
+        </p>
+      </form>
+
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="loading" *ngIf="loading"></div>
+<h1 class="header">Todo Lists</h1>
+<div class="pull-right">
+  <!-- Welcome {{username}} -->  <a (click)="Logout()" class="logout" title="logout"><i class="fa fa-power-off"></i></a>
+  </div>
+<div class="container">
+
+  <div class="table-responsive todo-table">
+
+    <div class="search-container col-sm-12">
+        <a routerLink="/createTodo" class=" pull-left btn btn-primary">Create Todo List</a>
+     <div class= pull-right>
+        <label class="search-text">Search:</label>
+
+      <input type="text" class="form-control search-todo" placeholder="Search List..." [(ngModel)]="searchInput">
+      </div>
+    </div>
+    
+    <table class="table table-striped" border="1" width="100%">
+      <tr>
+        <th width="22%">Title</th>
+        <th width="22%">Details</th>
+        <th width="22%">Assigned To</th>
+        <th width="22%">Assigned By</th>
+        <th style="text-align: center" width="12%" align="center">Action</th>
+      </tr>
+  
+      <tr *ngFor="let getTodoRes of getTodoResult?.message | category: '' : searchInput | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+          <td align="left">{{getTodoRes.title}}</td>
+          <td align="left">{{getTodoRes.details}}</td>
+          <td align="left">{{getTodoRes.assignTo}}</td>
+          <td align="center">{{getTodoRes.assignedBy}}</td>
+          <td align="center">
+            <a (click)="deleteTodo(getTodoRes)">
+              <span>Delete</span>
+            </a>
+          </td>
+        </tr>
+    </table>
+  </div>
+  <pagination-controls class="pull-right" (pageChange)="p = $event"></pagination-controls>
+</div>
+
+<footer class="footerFixed">&copy; xxxxxx 2018
+</footer>
